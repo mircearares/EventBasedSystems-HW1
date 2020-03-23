@@ -86,25 +86,26 @@ def generate_subscriptions(groups, values):
     subscriptions = []
     smallestDomainPercentage = 90
 
-    for group in groups:
-        subscription = {}
-        for key, value in group:
-            if value > 0:
-                if isinstance(values[key], list):
-                    if key == "make":
-                        if smallestDomainPercentage > 0:
-                            subscription[key] = generate_dict(values[key], ["="])
-                            smallestDomainPercentage -= 1
+    for i in range(0, NUMBER_OF_PUBLICATIONS):
+        for group in groups:
+            subscription = {}
+            for key, value in group:
+                if value > 0:
+                    if isinstance(values[key], list):
+                        if key == "make":
+                            if smallestDomainPercentage > 0:
+                                subscription[key] = generate_dict(values[key], ["="])
+                                smallestDomainPercentage -= 1
+                            else:
+                                subscription[key] = generate_dict(values[key], ["!="])
                         else:
-                            subscription[key] = generate_dict(values[key], ["!="])
+                            subscription[key] = generate_dict(values[key], ["=", "!="]) 
                     else:
-                        subscription[key] = generate_dict(values[key], ["=", "!="]) 
-                else:
-                    randomValue = round(random.uniform(values[key]["min"], values[key]["max"]), 2)
-                    subscription[key] = generate_dict(randomValue, OPERATORS_LIST)
+                        randomValue = round(random.uniform(values[key]["min"], values[key]["max"]), 2)
+                        subscription[key] = generate_dict(randomValue, OPERATORS_LIST)
 
-                value -= 1
-        subscriptions.append(subscription)
+                    value -= 1
+            subscriptions.append(subscription)
 
     return subscriptions
 
