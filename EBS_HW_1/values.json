@@ -1,0 +1,29 @@
+{
+    "make": [
+        "MAN",
+        "Scania",
+        "Iveco",
+        "DAF",
+        "Renault",
+        "Volvo"
+    ],
+    "color": [
+        "white",
+        "black",
+        "red",
+        "yellow",
+        "green"
+    ],
+    "speed": {
+        "min": 0.0,
+        "max": 150.0
+    },
+    "latitude": {
+        "min": 43.4,
+        "max": 48.1
+    },
+    "longitude": {
+        "min": 20.5,
+        "max": 29.5
+    }
+}

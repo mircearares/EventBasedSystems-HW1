@@ -1,0 +1,30 @@
+[
+    {
+        "make": {
+            "operator": "=",
+            "value": "MAN"
+        },
+        "speed": {
+            "operator": "<=",
+            "value": 148.2
+        }
+    },
+    {
+        "color": {
+            "operator": "!=",
+            "value": "red"
+        },
+        "latitude": {
+            "operator": ">=",
+            "value": 44.21
+        },
+        "longitude": {
+            "operator": ">",
+            "value": 20.75
+        },
+        "make": {
+            "operator": "=",
+            "value": "Volvo"
+        }
+    }
+]
